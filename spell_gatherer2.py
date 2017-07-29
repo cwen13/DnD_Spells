@@ -27,8 +27,9 @@ def gather_spell_info(spell_page):
     table = soup.table.find_all('tr')
 
     # Grabbing the description
-    description = soup.find('div',class_='pagecontent').text.replace("\n"," ")
-
+    # Placeing descirpiton in the dict
+    spell_attributes['Description'] = soup.find('div',class_='pagecontent').text.replace("\n"," ")
+    
     #Looping over table to pull out desired information
     for entry in table:
         try:
